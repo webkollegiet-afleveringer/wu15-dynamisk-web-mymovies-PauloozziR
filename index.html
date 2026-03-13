@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="my-movies.js" defer></script>
+        <script src="dark-mode.js" defer></script>
+        <title>MyMovies</title>
+    </head>
+    <body>
+        <div id="body-wrapper">
+            <header>
+                <div id="ios-top-bar"></div>
+                <div id="title-box">
+                    <svg></svg>
+                    <h1>MyMovies</h1>
+                    <label class="light-switch">
+                        <input type="checkbox" class="switch-toggle">
+                        <div class="switch-base"></div>
+                    </label>
+                </div>
+            </header>
+            <main>
+                <section id="now-showing">
+                    <header>
+                        <h2 id="now-showing-title">Now Showing</h2>
+                        <button id="now-showing-button">See more</button>
+                    </header>
+                    <ul id="now-showing-movie-box"></ul>
+                </section>
+                <section id="popular">
+                    <header>
+                        <h2>Popular</h2>
+                        <button>See more</button>
+                    </header>
+                    <ul id="popular-movie-box"></ul>
+                </section>
+            </main>
+            <footer>
+                <div id="bottom-navigation">
+                    <svg></svg>
+                    <svg></svg>
+                    <svg></svg>
+                </div>
+                <figure id="ios-home-bar"></figure>
+            </footer>
+        </div>
+    </body>
+</html>

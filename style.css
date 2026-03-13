@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    color-scheme: light dark;
+    --dark-color: rgb(26, 26, 26);
+    --light-color: rgb(247, 247, 247);
+}
+[data-dark="true"] {
+    color-scheme: dark;
+}
+[data-dark="false"] {
+    color-scheme: light;
+}
+ul {
+    list-style-type: none;
+}
+button {
+    border-radius: 1rem;
+}
+#body-wrapper {
+    padding: 1rem 4% 0.5rem;
+}
+#title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.light-switch-case input {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.switch-base {
+    width: 2rem;
+    height: 1rem;
+    background-color: cadetblue;
+    border-radius: 0.5rem;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.switch-toggle {
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.05rem;
+    left: 0.05rem;
+    transition: all 200ms ease;
+}
+.light-switch input:checked + .switch-base {
+    background-color: white;
+}
+.light-switch input:checked + .switch-base .switch-toggle {
+    justify-content: end;
+    transform: translateX(1rem);
+    background-color: black;
+}
+section header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#now-showing-button {
+    height: 2rem;
+}
+#now-showing-movie-box {
+    display: flex;
+}
+#popular li {
+    margin-bottom: 1rem;
+}
+.popular-movie-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 5%;
+}
+.popular-movie-card img {
+    grid-column: 1;
+    grid-row: 1/-1;
+}
+.popular-movie-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+}
+.popular-movie-card .rating {
+    grid-column: 2;
+    grid-row: 2;
+}
+.popular-movie-card .genre-list {
+    grid-column: 2/span2;
+    grid-row: 3;
+}
+.popular-movie-card .length {
+    grid-column: 2;
+    grid-row: 4;
+}
+.popular-movie-card a {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+}
