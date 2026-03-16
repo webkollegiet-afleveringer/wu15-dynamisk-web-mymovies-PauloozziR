@@ -4,7 +4,7 @@ const options = {
         accept: 'application/json',
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDc0OTdkMmVhMTg4ODgzMWRlOTgzZTY3MjFlNzcxOSIsIm5iZiI6MTc3MzMwNzU1MC42MDQsInN1YiI6IjY5YjI4NjllNDYwNGZhYzNjNzRlZmJhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vmf_pWhXeE465Jzmk3i96jPQL5nJtnNwIQCXzdtf1vc'
     }
-};
+}
 const apiKey = "547497d2ea1888831de983e6721e7719";
 const baseImgUrl = "http://image.tmdb.org/t/p";
 const nowShowingUrl = "https://api.themoviedb.org/3/movie/now_playing";
@@ -28,11 +28,11 @@ fetch('https://api.themoviedb.org/3/movie/popular', options)
         displayPopular(data)
         console.log(data)
     })
-/* fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
   .then(res => res.json())
   .then(res => console.log(res))
   .catch(err => console.error(err));
-*//*
+/*
 async function fetchPopular() {
     const popularMovieFetch = await fetch('https://api.themoviedb.org/3/movie/popular', options)
     const genreFetch = await fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
@@ -58,7 +58,7 @@ function displayNowShowing(data) {
                     ${vote_average}/10 IMDb
                 </p>
             </article>
-            <a href="detail.html?id=${id}&url=${nowShowingUrl}&name=${title}"></a>
+            <a href="detail.html?id=${id}&url=${nowShowingUrl}&title=${title}"></a>
         </li>`
     }).join("")
     nowBoxDom.insertAdjacentHTML("beforeend", nowString)
@@ -84,7 +84,7 @@ function displayPopular(data) {
                 </ul>
                 <p class="length"></p>
             </article>
-            <a href="detail.html?id=${id}&url=${popularUrl}&name=${title}"></a>
+            <a href="detail.html?id=${id}&url=${popularUrl}&title=${title}"></a>
         </li>`
     }).join("")
     popularBoxDom.insertAdjacentHTML("beforeend", popularString)

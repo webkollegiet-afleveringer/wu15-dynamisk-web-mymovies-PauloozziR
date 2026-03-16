@@ -9,10 +9,6 @@
     --dark-color: rgb(26, 26, 26);
     --light-color: rgb(247, 247, 247);
 }
-html {
-    color: light-dark(var(--dark-color), var(--light-color));
-    background-color: light-dark(var(--light-color), var(--dark-color));
-}
 [data-dark="true"] {
     color-scheme: dark;
 }
@@ -38,7 +34,9 @@ ul {
     font-weight: bold;
 }
 button {
-    background-color: black;
+    /* color: light-dark(var(--light-color), var(--dark-color));
+    background-color: light-dark(var(--dark-color), var(--light-color));
+    border: 1px solid light-dark(var(--light-color), var(--dark-color)); */
     border-radius: 1rem;
     padding: 1% 2%;
 }
@@ -58,7 +56,7 @@ button {
 .light-switch {
     width: 2.5rem;
     height: 1.5rem;
-    background-color: gray;
+    background-color: #AAA9B1;
     border-radius: 1rem;
     position: relative;
     display: flex;
@@ -68,7 +66,7 @@ button {
 .switch-base {
     width: 1.1em;
     height: 1.1rem;
-    background-color: white;
+    background-color: #fff;
     border-radius: 50%;
     position: absolute;
     top: 0.2rem;
@@ -76,11 +74,11 @@ button {
     transition: all 200ms ease;
 }
 .light-switch:has(input:checked) {
-    background-color: white;
+    background-color: #fff;
 }
 .light-switch input:checked + .switch-base {
     transform: translateX(1.1rem);
-    background-color: black;
+    background-color: #000;
 }
 section header {
     display: flex;
