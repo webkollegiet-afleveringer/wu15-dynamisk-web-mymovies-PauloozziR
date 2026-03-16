@@ -17,7 +17,7 @@ function init() {
 switchElm.addEventListener("change", () => {
     const isDark = switchElm.checked;
     root.setAttribute("data-dark", isDark);
-    saveToLocalStorage("isDarkMode", isDark);
+    saveToLocalStorage("isDarkMode", isDark)
 });
 function saveToLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))
@@ -28,5 +28,5 @@ function readFromLocalStorage(key) {
 }
 function deleteFromLocalStorage(key) {
     localStorage.removeItem(key)
-    return "The element with key " + key + " was deleted.";
+    return "The element with key " + key + " was deleted."
 }

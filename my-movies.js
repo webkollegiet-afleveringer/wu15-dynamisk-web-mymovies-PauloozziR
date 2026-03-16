@@ -6,7 +6,7 @@ const options = {
     }
 };
 const apiKey = "547497d2ea1888831de983e6721e7719";
-const baseImgPath = "http://image.tmdb.org/t/p";
+const baseImgUrl = "http://image.tmdb.org/t/p";
 const nowShowingUrl = "https://api.themoviedb.org/3/movie/now_playing";
 const popularUrl = "https://api.themoviedb.org/3/movie/popular";
 const nowBoxDom = document.querySelector("#now-showing-movie-box");
@@ -49,7 +49,7 @@ function displayNowShowing(data) {
         return /*html*/ `
         <li>
             <article class="now-movie-card">
-                <img src="${baseImgPath}/w185${poster_path}" alt="${title} poster">
+                <img src="${baseImgUrl}/w185${poster_path}" alt="${title} poster">
                 <h3>${title}</h3>
                 <p class="rating">
                     <span class="star">
@@ -71,7 +71,7 @@ function displayPopular(data) {
         return /*html*/ `
         <li>
             <article class="popular-movie-card">
-                <img src="${baseImgPath}/w92${poster_path}" alt="${title} poster">
+                <img src="${baseImgUrl}/w92${poster_path}" alt="${title} poster">
                 <h3>${title}</h3>
                 <p class="rating">
                     <span class="star">

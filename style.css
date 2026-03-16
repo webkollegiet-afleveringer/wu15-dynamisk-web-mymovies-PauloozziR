@@ -2,11 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
 }
 :root {
     color-scheme: light dark;
     --dark-color: rgb(26, 26, 26);
     --light-color: rgb(247, 247, 247);
+}
+html {
+    color: light-dark(var(--dark-color), var(--light-color));
+    background-color: light-dark(var(--light-color), var(--dark-color));
 }
 [data-dark="true"] {
     color-scheme: dark;
@@ -14,11 +19,28 @@
 [data-dark="false"] {
     color-scheme: light;
 }
+h1, h2 {
+    font-family: "Merriweather", serif;
+    font-size: 1rem;
+}
+h3 {
+    font-size: 0.88rem;
+}
+p {
+    font-size: 0.75rem;
+}
 ul {
     list-style-type: none;
 }
+.popular-movie-card li {
+    font-size: 0.5rem;
+    font-size: 8px;
+    font-weight: bold;
+}
 button {
+    background-color: black;
     border-radius: 1rem;
+    padding: 1% 2%;
 }
 #body-wrapper {
     padding: 1rem 4% 0.5rem;
@@ -28,37 +50,36 @@ button {
     justify-content: space-between;
     align-items: center;
 }
-.light-switch-case input {
+.light-switch input {
     width: 1px;
     height: 1px;
     opacity: 0;
 }
-.switch-base {
-    width: 2rem;
-    height: 1rem;
-    background-color: cadetblue;
-    border-radius: 0.5rem;
+.light-switch {
+    width: 2.5rem;
+    height: 1.5rem;
+    background-color: gray;
+    border-radius: 1rem;
     position: relative;
     display: flex;
     justify-content: start;
     align-items: center;
 }
-.switch-toggle {
-    width: 0.9rem;
-    height: 0.9rem;
+.switch-base {
+    width: 1.1em;
+    height: 1.1rem;
     background-color: white;
     border-radius: 50%;
     position: absolute;
-    top: 0.05rem;
-    left: 0.05rem;
+    top: 0.2rem;
+    left: 0.2rem;
     transition: all 200ms ease;
 }
-.light-switch input:checked + .switch-base {
+.light-switch:has(input:checked) {
     background-color: white;
 }
-.light-switch input:checked + .switch-base .switch-toggle {
-    justify-content: end;
-    transform: translateX(1rem);
+.light-switch input:checked + .switch-base {
+    transform: translateX(1.1rem);
     background-color: black;
 }
 section header {
@@ -66,8 +87,8 @@ section header {
     justify-content: space-between;
     align-items: center;
 }
-#now-showing-button {
-    height: 2rem;
+#now-showing header {
+    margin: 2rem 0 1rem;
 }
 #now-showing-movie-box {
     display: flex;
